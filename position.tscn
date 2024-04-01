@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ddn8xm82elk"]
+
+[ext_resource type="Script" path="res://position.gd" id="1_s02ai"]
+
+[node name="position" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s02ai")
+
+[node name="currentPos" type="Label" parent="."]
+layout_mode = 0
+offset_right = 714.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 40
+text = "some test that shouldn't be here"

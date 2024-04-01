@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bmg6kbvl7wnmc"]
+
+[node name="UImanager" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 824.0
+offset_bottom = 312.0
+text = "SOME TEXT THAT YOU SHOULD NOT SEE "
