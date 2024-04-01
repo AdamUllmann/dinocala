@@ -10,10 +10,10 @@
 [node name="map" parent="." instance=ExtResource("1_6gs1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0446424, -0.0223503, -0.00300026)
 
-[node name="waterMesh" parent="." instance=ExtResource("3_6i2ux")]
-
 [node name="player" parent="." instance=ExtResource("3_2rw73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7078, 18.8744, 21.1171)
 
-[node name="UIposition" parent="." instance=ExtResource("4_dd7hn")]
+[node name="waterNode" parent="." instance=ExtResource("3_6i2ux")]
+
+[node name="position" parent="." instance=ExtResource("4_dd7hn")]
 mouse_filter = 2
