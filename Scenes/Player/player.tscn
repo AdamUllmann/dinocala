@@ -1,16 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=10 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
+[ext_resource type="ArrayMesh" uid="uid://bu3l23f6urf55" path="res://Assets/Models/ImageToStl.com_raptor-blue.obj" id="2_k88dt"]
 [ext_resource type="Shader" uid="uid://lqfqny58k8uw" path="res://water.tres" id="3_c0swy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0pce"]
-albedo_color = Color(0.278431, 1, 1, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ji1vj"]
-material = SubResource("StandardMaterial3D_v0pce")
 
 [sub_resource type="Animation" id="Animation_k48xp"]
 resource_name = "swing"
@@ -52,11 +47,12 @@ script = ExtResource("1_3uef2")
 shape = SubResource("CapsuleShape3D_cet7n")
 
 [node name="bodyMesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_ji1vj")
+mesh = ExtResource("2_k88dt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151587, 0.671016, -0.557144)
+fov = 86.9
 
 [node name="pickaxe" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243112)

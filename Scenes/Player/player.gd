@@ -11,6 +11,7 @@ var mouse_sensitivity = 0.002
 var actionPressed = false
 var inAir = false
 
+@onready var camera = $ThirdPersonCamera
 @onready var raycast := $Camera3D/RayCast3D
 @onready var world := $/root/main/map
 @onready var playerCoords := $/root/UIposition
@@ -47,11 +48,12 @@ func jump():
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("action"):
-		$AnimationPlayer.play("swing")
-		actionPressed = true
-		$Camera3D.current = false		
-		$Camera3D/pickaxe/pickaxe/pickCam2.current = true
+	if event is InputEventMouseMotion:
+		var cam_rot = camera.rotation_degrees
+		cam_rot.x -= event.relative.y * mouse_sensitivity
+		cam_rot.y -= event.relative.x * mouse_sensitivity
+		cam_rot.x = clamp(cam_rot.x, -70, 70)  # Limit vertical angle
+		camera.rotation_degrees = cam_rot
 		
 		
 	if event.is_action_released("action"):
