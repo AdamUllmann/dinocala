@@ -47,12 +47,12 @@ script = ExtResource("1_3uef2")
 shape = SubResource("CapsuleShape3D_cet7n")
 
 [node name="bodyMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.999841, 0, 0.0178537, 0, 1, 0, -0.0178537, 0, -0.999841, 0, 0, 0)
 mesh = ExtResource("2_k88dt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151587, 0.671016, -0.557144)
-fov = 86.9
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151587, 1.41344, 2.4147)
 
 [node name="pickaxe" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243112)
@@ -61,7 +61,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243
 transform = Transform3D(-1.254e-07, -7.23998e-08, -0.04, -0.02, 0.034641, 0, 0.034641, 0.02, -1.448e-07, 0.56205, -0.235843, -0.411837)
 
 [node name="pickCam" type="Camera3D" parent="Camera3D/pickaxe/pickaxe"]
-transform = Transform3D(-7.83751e-05, -22.7545, 10.3554, -4.525e-05, 10.3554, 22.7545, -25, 5.2592e-05, -7.36498e-05, -18.7678, 45.0392, 0.154533)
+transform = Transform3D(-7.83751e-05, -22.7545, 10.3554, -4.525e-05, 10.3554, 22.7545, -25, 5.25919e-05, -7.36495e-05, -18.7678, 45.0392, 0.154534)
+current = true
 fov = 77.199
 
 [node name="pickCam2" type="Camera3D" parent="Camera3D/pickaxe/pickaxe"]
