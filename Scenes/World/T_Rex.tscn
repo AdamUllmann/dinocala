@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhdvccgjtk5va"]
+
+[ext_resource type="ArrayMesh" uid="uid://bu3l23f6urf55" path="res://Assets/Models/ImageToStl.com_raptor-blue.obj" id="1_fp6bj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fs0bx"]
+
+[node name="TRex" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(5.09843, 0, 0, 0, 3.33462, 0, 0, 0, 4.7893, 0, 0, 0)
+mesh = ExtResource("1_fp6bj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("CapsuleShape3D_fs0bx")

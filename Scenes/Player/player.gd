@@ -4,9 +4,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 4.0
 var defaultSpeed = 4.0
 #var sprintSpeed = 25.0
-var sprintSpeed = 250.0
+var sprintSpeed = 150.0
 #var jump_speed = 11.0
-var jump_speed = 40.0
+var jump_speed = 20.0
 var mouse_sensitivity = 0.002
 var actionPressed = false
 var inAir = false
@@ -15,6 +15,8 @@ var inAir = false
 @onready var world := $/root/main/map
 @onready var playerCoords := $/root/UIposition
 @onready var waterMesh := get_parent().get_node("waterMesh")
+
+
 
 
 func _ready():

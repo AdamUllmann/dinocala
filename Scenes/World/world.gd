@@ -11,6 +11,14 @@ var load_distance := 3
 @onready var player := get_tree().get_first_node_in_group("player")
 @onready var water := get_parent().get_node("waterMesh").get_child(0)
 
+@export var tRexScene := preload("res://Scenes/World/T_Rex.tscn")
+
+#func spawn_tRex(position: Vector3):
+#	var tRex = tRexScene.instance()
+#	if tRex != null:  
+#		tRex.global_transform.origin = position
+#		self.add_child(tRex)
+
 func _ready():
 	setup_noise()
 	player.position.y += 50
@@ -82,6 +90,12 @@ func generate_chunk(chunk_pos: Vector3):
 	var shape = ConcavePolygonShape3D.new()
 	shape.set_faces(surface_tool.commit_to_arrays()[Mesh.ARRAY_VERTEX])
 	collision_shape.shape = shape
+	
+	if randf() < 0.1:
+		var spawn_x = randf_range(0, chunk_size.x) + chunk_pos.x
+		var spawn_z = randf_range(0, chunk_size.z) + chunk_pos.z
+		var spawn_position = Vector3(spawn_x, 0, spawn_z)
+#		spawn_tRex(spawn_position)
 
 func generate_heights(chunk_pos: Vector3) -> Array:
 	var heights = []

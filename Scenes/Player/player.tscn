@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
-[ext_resource type="ArrayMesh" uid="uid://bu3l23f6urf55" path="res://Assets/Models/ImageToStl.com_raptor-blue.obj" id="2_k88dt"]
+[ext_resource type="ArrayMesh" uid="uid://c3ylkx3tvx550" path="res://Assets/Models/Dino.obj" id="2_qvtkn"]
 [ext_resource type="Shader" uid="uid://lqfqny58k8uw" path="res://water.tres" id="3_c0swy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
@@ -47,18 +47,20 @@ script = ExtResource("1_3uef2")
 shape = SubResource("CapsuleShape3D_cet7n")
 
 [node name="bodyMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.999841, 0, 0.0178537, 0, 1, 0, -0.0178537, 0, -0.999841, 0, 0, 0)
-mesh = ExtResource("2_k88dt")
+transform = Transform3D(-0.296357, 0, 0.00688668, 0, 0.294973, 0, -0.0052919, 0, -0.385668, 0, 0, 0)
+mesh = ExtResource("2_qvtkn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151587, 1.41344, 2.4147)
+transform = Transform3D(1, 0, 0, 0, 0.957148, 0.2896, 0, -0.2896, 0.957148, 0.00151587, 4.08071, 5.36243)
+fov = 94.6607
 
 [node name="pickaxe" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243112)
 
 [node name="pickaxe" parent="Camera3D/pickaxe" instance=ExtResource("2_2gnp6")]
-transform = Transform3D(-1.254e-07, -7.23998e-08, -0.04, -0.02, 0.034641, 0, 0.034641, 0.02, -1.448e-07, 0.56205, -0.235843, -0.411837)
+transform = Transform3D(-1.254e-07, -7.23998e-08, -0.04, -0.02, 0.034641, 0, 0.034641, 0.02, -1.448e-07, 0.56205, 0.670482, 0.344257)
+visible = false
 
 [node name="pickCam" type="Camera3D" parent="Camera3D/pickaxe/pickaxe"]
 transform = Transform3D(-7.83751e-05, -22.7545, 10.3554, -4.525e-05, 10.3554, 22.7545, -25, 5.25919e-05, -7.36495e-05, -18.7678, 45.0392, 0.154534)
