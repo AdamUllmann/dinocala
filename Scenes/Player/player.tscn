@@ -1,11 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=15 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
+[ext_resource type="Texture2D" uid="uid://uliwygso70qa" path="res://Assets/Models/dino_fuckcs_BaseColor.png" id="2_gjswg"]
 [ext_resource type="ArrayMesh" uid="uid://c3ylkx3tvx550" path="res://Assets/Models/Dino.obj" id="2_qvtkn"]
+[ext_resource type="Texture2D" uid="uid://ddejbbjjjqgom" path="res://Assets/Models/dino_fuckcs_Height.png" id="3_6gc85"]
 [ext_resource type="Shader" uid="uid://lqfqny58k8uw" path="res://water.tres" id="3_c0swy"]
+[ext_resource type="Texture2D" uid="uid://cvggtucgtix6t" path="res://Assets/Models/dino_fuckcs_Normal.png" id="4_oxscg"]
+[ext_resource type="Texture2D" uid="uid://wgv7380rs45m" path="res://Assets/Models/dino_fuckcs_Roughness.png" id="5_ph26u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_kkum2"]
+albedo_texture = ExtResource("2_gjswg")
+normal_enabled = true
+normal_texture = ExtResource("4_oxscg")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_6gc85")
+subsurf_scatter_enabled = true
+subsurf_scatter_texture = ExtResource("5_ph26u")
 
 [sub_resource type="Animation" id="Animation_k48xp"]
 resource_name = "swing"
@@ -48,6 +61,7 @@ shape = SubResource("CapsuleShape3D_cet7n")
 
 [node name="bodyMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.296357, 0, 0.00688668, 0, 0.294973, 0, -0.0052919, 0, -0.385668, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_kkum2")
 mesh = ExtResource("2_qvtkn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -68,7 +82,7 @@ current = true
 fov = 77.199
 
 [node name="pickCam2" type="Camera3D" parent="Camera3D/pickaxe/pickaxe"]
-transform = Transform3D(-6.90754, -22.0969, 9.4346, -3.98807, 10.735, 22.2228, -23.6935, 4.63517, -6.49107, -18.7678, 45.0392, -14.3052)
+transform = Transform3D(-6.90754, -22.0969, 9.43458, -3.98807, 10.735, 22.2228, -23.6935, 4.63518, -6.49107, -205.022, -58.1863, 13.5002)
 fov = 77.199
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
